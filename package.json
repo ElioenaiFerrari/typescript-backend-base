@@ -22,7 +22,7 @@
   "scripts": {
     "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/main.ts",
     "encrypt": "ccrypt -e .env.* -K $(cat .env | grep PASSWORD | cut -d= -f2)",
-    "decrypt": "ccrypt -d *.cpt -K $(cat .env | grep PASSWORD | cut -d= -f2)"
+    "decrypt": "ccrypt -d .env.*.cpt -K $(cat .env | grep PASSWORD | cut -d= -f2)"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
