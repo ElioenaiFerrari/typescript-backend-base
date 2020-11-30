@@ -21,6 +21,8 @@
   },
   "scripts": {
     "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/main.ts",
+    "prestart": "yarn decrypt",
+    "poststart": "yarn encrypt",
     "encrypt": "ccrypt -e .env.* -K $(cat .env | grep PASSWORD | cut -d= -f2)",
     "decrypt": "ccrypt -d .env.*.cpt -K $(cat .env | grep PASSWORD | cut -d= -f2)"
   },
