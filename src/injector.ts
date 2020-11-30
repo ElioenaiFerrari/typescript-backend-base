@@ -15,7 +15,7 @@ const injector = {
       commons[key].default(app);
     });
 
-    this.commons = commons;
+    injector.commons = commons;
   },
 };
 
